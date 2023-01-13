@@ -30,7 +30,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.user }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker meta
@@ -38,7 +38,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/${{ github.user }}/z1_fibo
+            ghcr.io/${{ github.repository_owner }}/z1_fibo
           tags: |
             type=ref,event=branch
             type=ref,event=pr
