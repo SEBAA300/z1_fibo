@@ -49,8 +49,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          cache-from: type=registry,src=docker.io/sebaa300/dockerrepo/z1_fibo:buildx-cache
-          cache-to: type=registry,dest=docker.io/sebaa300/dockerrepo/z1_fibo:buildx-cache
+          cache-from: type=registry,src=docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/dockerrepo/z1_fibo:buildx-cache
+          cache-to: type=registry,dest=docker.io/${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}/dockerrepo/z1_fibo:buildx-cache
           platforms: linux/amd64,linux/arm64
           context: ./
           file: Dockerfile
