@@ -52,7 +52,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           cache-from: type=registry,src=docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/z1_fibo:buildx-cache
-          cache-to: type=registry,dest=docker.io/${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}/z1_fibo:buildx-cache
+          cache-to: type=registry,dest=docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/z1_fibo:buildx-cache
           platforms: linux/amd64,linux/arm64
           context: ./
           file: Dockerfile
